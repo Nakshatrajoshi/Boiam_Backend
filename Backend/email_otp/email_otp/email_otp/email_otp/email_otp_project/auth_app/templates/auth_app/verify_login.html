@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Verify Login OTP</title>
+</head>
+<body>
+  <h2>Verify Login - Enter the OTP sent to your email</h2>
+  {% if error %}<p style="color:red;">{{ error }}</p>{% endif %}
+  <form method="post">
+    {% csrf_token %}
+    <input type="text" name="otp" placeholder="Enter OTP" required>
+    <button type="submit">Verify</button>
+  </form>
+</body>
+</html>
